@@ -5,31 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cleara Admin Dashboard - Complete Management Platform PRD</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Fallback Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+            color: #1f2937;
+        }
+        .proposal-header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
+            position: relative;
+            overflow: hidden;
+        }
+        .proposal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
         .chart-container { height: 400px; }
         .small-chart { height: 250px; }
         .mini-chart { height: 200px; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gradient-text {
+            color: #1e40af;
+            font-weight: 700;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        /* Font Awesome icon fixes */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro" !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+            display: inline-block !important;
+            text-rendering: auto !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+        @media print { .no-print { display: none !important; } }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-    <!-- Header -->
-    <div class="bg-gray-800 text-white p-8">
-        <div class="max-w-7xl mx-auto">
-            <h1 class="text-3xl font-bold mb-4"><i class="fas fa-tachometer-alt mr-3"></i>Cleara Admin Dashboard</h1>
-            <p class="text-lg text-gray-300">Complete Management Platform - Product Requirements Document</p>
-            <p class="text-gray-400 mt-2">Comprehensive administrative control for property management and service delivery across the GCC region</p>
+<body class="bg-white text-gray-900">
+
+    <!-- Proposal Header -->
+    <header class="proposal-header text-white">
+        <div class="max-w-7xl mx-auto px-6 py-16">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="inline-block bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-file-contract mr-2"></i>
+                        Product Requirements Document
+                    </span>
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    Cleara Admin Dashboard<br>
+                    <span class="text-blue-200">Complete Management Platform PRD</span>
+                </h1>
+                <p class="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Comprehensive administrative control system for managing the complete Cleara ecosystem,
+                    including property owners, service providers, financial operations, and service delivery across GCC markets.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">360° Control</div>
+                        <div class="text-blue-50 font-semibold text-lg">Platform Oversight</div>
+                        <div class="text-sm text-blue-100 mt-2">Complete Management</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">Real-Time</div>
+                        <div class="text-blue-50 font-semibold text-lg">Analytics & Monitoring</div>
+                        <div class="text-sm text-blue-100 mt-2">Live Performance</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">GCC Ready</div>
+                        <div class="text-blue-50 font-semibold text-lg">Regional Management</div>
+                        <div class="text-sm text-blue-100 mt-2">Multi-Country Support</div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white py-6 sticky top-0 z-50 backdrop-blur-md bg-opacity-95 border-b border-gray-700 shadow-lg">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-3 shadow-md">
+                        <i class="fas fa-tachometer-alt text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">Admin Dashboard PRD</span>
+                </div>
+                <div class="space-x-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">← Back to Overview</a>
+                    <a href="#executive-summary" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">Executive Summary</a>
+                    <a href="#dashboard-overview" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">Dashboard Overview</a>
+                    <a href="#user-management" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">User Management</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Main Content -->
     <div class="max-w-7xl mx-auto p-6">
         
         <!-- Executive Summary -->
-        <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+        <section id="executive-summary" class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Executive Summary</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -83,7 +187,7 @@
         </section>
 
         <!-- Dashboard Overview -->
-        <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+        <section id="dashboard-overview" class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
             <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Dashboard Architecture Overview</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -163,7 +267,7 @@
         </section>
 
         <!-- User Management System -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="user-management" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-users text-teal-600 mr-3"></i>User Management System</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
@@ -259,7 +363,7 @@
         </section>
 
         <!-- Service Provider Management -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="provider-management" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-hard-hat text-teal-600 mr-3"></i>Service Provider Management</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
@@ -430,7 +534,7 @@
         </section>
 
         <!-- Service Delivery Management -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="service-management" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-clipboard-check text-teal-600 mr-3"></i>Service Delivery Management</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -557,7 +661,7 @@
         </section>
 
         <!-- Financial Management -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="financial-management" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-chart-pie text-teal-600 mr-3"></i>Financial Management & Analytics</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
@@ -692,7 +796,7 @@
         </section>
 
         <!-- Regional Management -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="regional-management" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-globe text-teal-600 mr-3"></i>GCC Regional Management</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -797,7 +901,7 @@
         </section>
 
         <!-- Technical Administration -->
-        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+        <section id="technical-administration" class="bg-white rounded-lg shadow-lg p-8 mb-8">
             <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-server text-teal-600 mr-3"></i>Technical Administration & Platform Management</h2>
             
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
@@ -1001,21 +1105,59 @@
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Footer -->
-        <section class="bg-gray-100 text-gray-700 rounded-lg p-6 border border-gray-200">
-            <div class="text-center">
-                <h2 class="text-xl font-bold mb-2">Cleara Admin Dashboard</h2>
-                <p class="text-gray-600 mb-4 text-sm">Comprehensive Management Platform for Property Services Excellence</p>
-                <div class="flex justify-center space-x-8 text-xs text-gray-500">
-                    <span>© 2024 Cleara Platform</span>
-                    <span>•</span>
-                    <span>Admin Dashboard v2.0</span>
-                    <span>•</span>
-                    <span>Last Updated: January 2024</span>
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 mt-16 w-full">
+        <div class="max-w-7xl mx-auto px-6">
+                <div class="grid md:grid-cols-3 gap-12 mb-12">
+                    <div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg flex items-center justify-center mr-3">
+                                <i class="fas fa-tachometer-alt text-white text-sm"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">Admin Dashboard</h3>
+                        </div>
+                        <p class="text-gray-300 text-sm leading-relaxed">
+                            Comprehensive management platform for the GCC region. Providing 360° oversight and control of the complete Cleara ecosystem with real-time analytics.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Document Sections</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><a href="#executive-summary" class="hover:text-white transition-colors">Executive Summary</a></li>
+                            <li><a href="#dashboard-overview" class="hover:text-white transition-colors">Dashboard Overview</a></li>
+                            <li><a href="#user-management" class="hover:text-white transition-colors">User Management</a></li>
+                            <li><a href="#service-management" class="hover:text-white transition-colors">Service Management</a></li>
+                            <li><a href="#financial-management" class="hover:text-white transition-colors">Financial Management</a></li>
+                            <li><a href="#technical-administration" class="hover:text-white transition-colors">Technical Administration</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold mb-4">Document Information</h3>
+                        <ul class="space-y-2 text-sm text-gray-300">
+                            <li><i class="fas fa-file-alt mr-2"></i>Admin Dashboard PRD v2.0</li>
+                            <li><i class="fas fa-map-marker-alt mr-2"></i>GCC Regional Management</li>
+                            <li><i class="fas fa-tachometer-alt mr-2"></i>Complete Platform Control</li>
+                            <li><i class="fas fa-chart-bar mr-2"></i>Real-Time Analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="border-t border-gray-700 pt-8 text-center">
+                    <div class="flex flex-col md:flex-row justify-between items-center">
+                        <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                            © 2025 Cleara Admin Dashboard PRD |
+                            <span class="text-blue-400 font-medium">Comprehensive Management Platform for Property Services Excellence</span>
+                        </p>
+                        <div class="flex space-x-6 text-sm text-gray-400">
+                            <span class="flex items-center"><i class="fas fa-calendar mr-2 text-blue-400"></i>Dashboard v2.0</span>
+                            <span class="flex items-center"><i class="fas fa-globe mr-2 text-green-400"></i>GCC Region</span>
+                            <span class="flex items-center"><i class="fas fa-tachometer-alt mr-2 text-blue-400"></i>Admin Platform</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </section>
+        </footer>
     </div>
 
     <script>
@@ -1199,6 +1341,28 @@
                 }
             }
         });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^=\"#\"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
     </script>
+
+    <!-- Print Styles -->
+    <style media=\"print\">
+        .no-print { display: none !important; }
+        body { font-size: 12pt; line-height: 1.4; }
+        .proposal-header { background: #1e40af !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .section-divider { border-left: 4px solid #2563eb; }
+    </style>
 </body>
 </html>
