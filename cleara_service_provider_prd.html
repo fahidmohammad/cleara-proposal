@@ -5,37 +5,136 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ClearaProvider Service Provider App - Complete Product Requirements Document</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <!-- Fallback Font Awesome CDN -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.4.0/css/all.css" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            min-height: 100vh;
+            color: #1f2937;
+        }
+        .proposal-header { 
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); 
+            position: relative;
+            overflow: hidden;
+        }
+        .proposal-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="0.5" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            pointer-events: none;
+        }
         .section-break { page-break-inside: avoid; }
         .workflow-step { border-left: 4px solid #10b981; padding-left: 1rem; margin: 1rem 0; }
         .feature-highlight { background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%); }
         .tech-card { background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%); }
         .gap-analysis { background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); }
-        .print-friendly { color-adjust: exact !important; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .gradient-text {
+            color: #1e40af;
+            font-weight: 700;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.03);
+        }
+        .print-friendly { print-color-adjust: exact !important; -webkit-print-color-adjust: exact !important; }
+        /* Font Awesome icon fixes */
+        .fas, .far, .fab {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro" !important;
+            font-weight: 900 !important;
+            font-style: normal !important;
+            display: inline-block !important;
+            text-rendering: auto !important;
+            -webkit-font-smoothing: antialiased !important;
+        }
+        @media print { .no-print { display: none !important; } }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 print-friendly">
-    <!-- Header -->
-    <div class="bg-white shadow-lg">
-        <div class="max-w-7xl mx-auto px-6 py-8">
-            <div class="flex items-center space-x-4">
-                <div class="w-16 h-16 bg-gray-100 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-tools text-2xl text-gray-600"></i>
+<body class="bg-white text-gray-900 print-friendly">
+
+    <!-- Proposal Header -->
+    <header class="proposal-header text-white">
+        <div class="max-w-6xl mx-auto px-6 py-16">
+            <div class="text-center">
+                <div class="mb-6">
+                    <span class="inline-block bg-white bg-opacity-20 px-4 py-2 rounded-lg text-sm font-medium">
+                        <i class="fas fa-file-contract mr-2"></i>
+                        Product Requirements Document
+                    </span>
                 </div>
-                <div>
-                    <h1 class="text-3xl font-bold text-gray-900">ClearaProvider Service Provider App</h1>
-                    <p class="text-lg text-gray-600">Complete Product Requirements Document</p>
-                    <p class="text-sm text-gray-500">Professional Service Delivery Platform for GCC Markets</p>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">
+                    ClearaProvider Service Provider App<br>
+                    <span class="text-blue-200">Complete Product Requirements Document</span>
+                </h1>
+                <p class="text-xl text-blue-100 mb-8 max-w-4xl mx-auto leading-relaxed">
+                    Comprehensive technical specifications for the service provider mobile application,
+                    designed for professional service delivery teams in the GCC market with advanced business management capabilities.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">Professional</div>
+                        <div class="text-blue-50 font-semibold text-lg">Service Platform</div>
+                        <div class="text-sm text-blue-100 mt-2">Business Management</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">GCC Focus</div>
+                        <div class="text-blue-50 font-semibold text-lg">Regional Optimization</div>
+                        <div class="text-sm text-blue-100 mt-2">Cultural Adaptation</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-2xl p-8 border border-white border-opacity-30 hover:bg-opacity-25 transition-all duration-300 shadow-lg">
+                        <div class="text-3xl font-bold mb-3 text-white drop-shadow-lg">Mobile-First</div>
+                        <div class="text-blue-50 font-semibold text-lg">Field Operations</div>
+                        <div class="text-sm text-blue-100 mt-2">Real-Time Coordination</div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="bg-gray-900 text-white py-6 sticky top-0 z-50 backdrop-blur-md bg-opacity-95 border-b border-gray-700 shadow-lg">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <div class="w-10 h-10 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center mr-3 shadow-md">
+                        <i class="fas fa-hard-hat text-white"></i>
+                    </div>
+                    <span class="text-xl font-bold text-white">Service Provider App PRD</span>
+                </div>
+                <div class="space-x-8 text-sm font-medium">
+                    <a href="index.html" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">← Back to Overview</a>
+                    <a href="#executive-summary" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">Executive Summary</a>
+                    <a href="#current-analysis" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">Current Analysis</a>
+                    <a href="#enhanced-features" class="hover:text-blue-400 transition-all duration-300 px-3 py-2 rounded-lg hover:bg-gray-800">Enhanced Features</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <div class="max-w-7xl mx-auto px-6 py-8 space-y-12">
         
         <!-- Executive Summary -->
-        <section class="section-break">
+        <section id="executive-summary" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-chart-line text-green-600 mr-3"></i>
@@ -85,7 +184,7 @@
         </section>
 
         <!-- Current Application Analysis -->
-        <section class="section-break">
+        <section id="current-analysis" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-mobile-alt text-green-600 mr-3"></i>
@@ -171,7 +270,7 @@
         </section>
 
         <!-- Enhanced Registration & Onboarding System -->
-        <section class="section-break">
+        <section id="enhanced-registration" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-user-check text-green-600 mr-3"></i>
@@ -252,7 +351,7 @@
         </section>
 
         <!-- Advanced Job Management System -->
-        <section class="section-break">
+        <section id="job-management" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-briefcase text-green-600 mr-3"></i>
@@ -335,7 +434,7 @@
         </section>
 
         <!-- Service Execution & Quality Assurance -->
-        <section class="section-break">
+        <section id="quality-assurance" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-star text-green-600 mr-3"></i>
@@ -489,7 +588,7 @@
         </section>
 
         <!-- Gap Analysis & Missing Features -->
-        <section class="section-break">
+        <section id="gap-analysis" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-search text-yellow-600 mr-3"></i>
@@ -583,7 +682,7 @@
         </section>
 
         <!-- Enhanced Provider Features -->
-        <section class="section-break">
+        <section id="enhanced-features" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-plus-circle text-green-600 mr-3"></i>
@@ -738,7 +837,7 @@
         </section>
 
         <!-- Technical Architecture & Integration -->
-        <section class="section-break">
+        <section id="technical-architecture" class="section-break">
             <div class="bg-white rounded-lg shadow-md p-8">
                 <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
                     <i class="fas fa-cogs text-green-600 mr-3"></i>
@@ -979,81 +1078,228 @@
 
         <!-- Conclusion -->
         <section class="section-break">
-            <div class="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <i class="fas fa-flag-checkered text-green-600 mr-3"></i>
-                    Strategic Summary & Next Steps
-                </h2>
-                
-                <div class="grid md:grid-cols-3 gap-6">
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold mb-3 flex items-center">
-                            <i class="fas fa-target text-red-600 mr-2"></i>
-                            Current State Assessment
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>✅ Solid foundation with basic workflow management</li>
-                            <li>✅ Effective real-time synchronization with property owners</li>
-                            <li>✅ Quality documentation and verification system</li>
-                            <li>⚠️ Limited business management capabilities</li>
-                            <li>⚠️ Basic financial tracking and reporting</li>
-                            <li>⚠️ Minimal professional development tools</li>
-                        </ul>
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-100 overflow-hidden">
+                <!-- Header with subtle gradient -->
+                <div class="bg-gradient-to-r from-slate-50 to-gray-50 border-b border-gray-100 p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-gray-900 rounded-xl flex items-center justify-center mr-4 shadow-md">
+                            <i class="fas fa-flag-checkered text-white text-xl"></i>
+                        </div>
+                        <h2 class="text-3xl font-bold text-gray-800">
+                            Strategic Summary & Next Steps
+                        </h2>
                     </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold mb-3 flex items-center">
-                            <i class="fas fa-rocket text-blue-600 mr-2"></i>
-                            Critical Enhancements
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>🎯 Comprehensive business intelligence dashboard</li>
-                            <li>🎯 Advanced team and resource management</li>
-                            <li>🎯 GCC market localization and cultural adaptation</li>
-                            <li>🎯 Professional development and certification system</li>
-                            <li>🎯 Enhanced communication and collaboration tools</li>
-                            <li>🎯 AI-powered optimization and insights</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="bg-white p-6 rounded-lg shadow">
-                        <h3 class="text-lg font-semibold mb-3 flex items-center">
-                            <i class="fas fa-trophy text-yellow-600 mr-2"></i>
-                            Success Factors
-                        </h3>
-                        <ul class="text-sm text-gray-700 space-y-2">
-                            <li>🏆 Market-leading provider experience</li>
-                            <li>🏆 Superior service quality and consistency</li>
-                            <li>🏆 Strong provider network growth and retention</li>
-                            <li>🏆 Regional market leadership in GCC</li>
-                            <li>🏆 Technology innovation and platform excellence</li>
-                            <li>🏆 Sustainable business model for all stakeholders</li>
-                        </ul>
-                    </div>
+                    <p class="text-gray-600 text-lg leading-relaxed">
+                        Comprehensive enhancement roadmap for service provider platform excellence and market leadership in the GCC region.
+                    </p>
                 </div>
                 
-                <div class="mt-8 p-6 bg-white rounded-lg border-2 border-green-200">
-                    <h3 class="text-xl font-bold text-center mb-4 text-green-800">
-                        ClearaProvider: Empowering Service Excellence in the GCC
-                    </h3>
-                    <p class="text-center text-gray-700 text-lg leading-relaxed">
-                        This comprehensive enhancement roadmap positions ClearaProvider as the definitive platform for service providers 
-                        in the GCC market, combining operational efficiency, business intelligence, and cultural sensitivity to create 
-                        sustainable growth opportunities for professional service teams while maintaining the highest standards of 
-                        customer satisfaction and service quality.
-                    </p>
+                <!-- Main content -->
+                <div class="p-8">
+                    <div class="grid md:grid-cols-3 gap-8 mb-8">
+                        <!-- Current State Assessment -->
+                        <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-6 border border-blue-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-blue-900 rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                                    <i class="fas fa-bullseye text-white text-sm"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">Current State Assessment</h3>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Solid foundation with basic workflow management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Effective real-time synchronization with property owners</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Quality documentation and verification system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Limited business management capabilities</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Basic financial tracking and reporting</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Minimal professional development tools</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Critical Enhancements -->
+                        <div class="bg-gradient-to-br from-emerald-50 to-green-50 rounded-xl p-6 border border-emerald-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-emerald-800 rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                                    <i class="fas fa-rocket text-yellow-700 text-sm"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">Critical Enhancements</h3>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Comprehensive business intelligence dashboard</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Advanced team and resource management</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>GCC market localization and cultural adaptation</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Professional development and certification system</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Enhanced communication and collaboration tools</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-emerald-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>AI-powered optimization and insights</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Success Factors -->
+                        <div class="bg-gradient-to-br from-purple-50 to-indigo-50 rounded-xl p-6 border border-purple-100">
+                            <div class="flex items-center mb-4">
+                                <div class="w-8 h-8 bg-purple-900 rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                                    <i class="fas fa-trophy text-white text-sm"></i>
+                                </div>
+                                <h3 class="text-xl font-semibold text-gray-800">Success Factors</h3>
+                            </div>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Market-leading provider experience</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Superior service quality and consistency</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Strong provider network growth and retention</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Regional market leadership in GCC</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Technology innovation and platform excellence</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="inline-block w-2 h-2 bg-purple-500 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                                    <span>Sustainable business model for all stakeholders</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Success Criteria -->
+                    <div class="bg-gradient-to-r from-slate-50 to-gray-50 rounded-xl p-6 border border-gray-200">
+                        <div class="flex items-center mb-4">
+                            <div class="w-8 h-8 bg-gray-900 rounded-lg flex items-center justify-center mr-3 shadow-sm">
+                                <i class="fas fa-star text-white text-sm"></i>
+                            </div>
+                            <h3 class="text-lg font-semibold text-gray-800">ClearaProvider: Empowering Service Excellence in the GCC</h3>
+                        </div>
+                        <p class="text-gray-700 leading-relaxed">
+                            This comprehensive enhancement roadmap positions ClearaProvider as the definitive platform for service providers 
+                            in the GCC market, combining operational efficiency, business intelligence, and cultural sensitivity to create 
+                            sustainable growth opportunities for professional service teams while maintaining the highest standards of 
+                            customer satisfaction and service quality.
+                        </p>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-16">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-lg font-semibold mb-2">ClearaProvider Service Provider App</p>
-            <p class="text-gray-300">Complete Product Requirements Document</p>
-            <p class="text-gray-400 text-sm mt-4">Comprehensive platform for professional service delivery in GCC markets</p>
+    <footer class="bg-gradient-to-r from-gray-900 to-gray-800 text-white py-12 mt-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-r from-green-600 to-green-700 rounded-lg flex items-center justify-center mr-3">
+                            <i class="fas fa-hard-hat text-white text-sm"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">Service Provider App</h3>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Professional service delivery platform for the GCC region. Empowering service providers with advanced business management and quality assurance tools.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Document Sections</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><a href="#executive-summary" class="hover:text-white transition-colors">Executive Summary</a></li>
+                        <li><a href="#current-analysis" class="hover:text-white transition-colors">Current Analysis</a></li>
+                        <li><a href="#enhanced-registration" class="hover:text-white transition-colors">Enhanced Registration</a></li>
+                        <li><a href="#job-management" class="hover:text-white transition-colors">Job Management</a></li>
+                        <li><a href="#quality-assurance" class="hover:text-white transition-colors">Quality Assurance</a></li>
+                        <li><a href="#technical-architecture" class="hover:text-white transition-colors">Technical Architecture</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Document Information</h3>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li><i class="fas fa-file-alt mr-2"></i>Product Requirements Document</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i>GCC Market Focus</li>
+                        <li><i class="fas fa-hard-hat mr-2"></i>Service Provider Platform</li>
+                        <li><i class="fas fa-chart-bar mr-2"></i>Business Intelligence</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-gray-400 text-sm mb-4 md:mb-0">
+                        © 2025 ClearaProvider Service Provider App PRD |
+                        <span class="text-blue-400 font-medium">Comprehensive platform for professional service delivery in GCC markets</span>
+                    </p>
+                    <div class="flex space-x-6 text-sm text-gray-400">
+                        <span class="flex items-center"><i class="fas fa-calendar mr-2 text-blue-400"></i>Professional Platform</span>
+                        <span class="flex items-center"><i class="fas fa-globe mr-2 text-green-400"></i>GCC Region</span>
+                        <span class="flex items-center"><i class="fas fa-hard-hat mr-2 text-blue-400"></i>Service Providers</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
+
+    <!-- Print Styles -->
+    <style media="print">
+        .no-print { display: none !important; }
+        body { font-size: 12pt; line-height: 1.4; }
+        .proposal-header { background: #1e40af !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+        .section-divider { border-left: 4px solid #2563eb; }
+    </style>
+
+    <script>
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>
