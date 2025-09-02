@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleara Property Owner App - Complete Product Requirements Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        .section-divider { border-left: 4px solid #4F46E5; }
+        .feature-card { transition: transform 0.2s; }
+        .feature-card:hover { transform: translateY(-2px); }
+        .workflow-step { position: relative; }
+        .workflow-step::after { content: ''; position: absolute; top: 40px; left: 20px; width: 2px; height: 60px; background: #E5E7EB; }
+        .workflow-step:last-child::after { display: none; }
+        @media print { .no-print { display: none !important; } }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <div class="gradient-bg text-white py-12">
+        <div class="container mx-auto px-6">
+            <h1 class="text-4xl font-bold mb-4">
+                <i class="fas fa-building mr-3"></i>
+                Cleara Property Owner App
+            </h1>
+            <p class="text-xl opacity-90">Complete Product Requirements Document</p>
+            <div class="mt-6 flex flex-wrap gap-4 text-sm">
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-calendar mr-1"></i>Version 1.0
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-globe mr-1"></i>GCC Market Focus
+                </span>
+                <span class="bg-white bg-opacity-20 px-3 py-1 rounded-full">
+                    <i class="fas fa-mobile-alt mr-1"></i>Mobile-First Platform
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 py-8 max-w-6xl">
+        
+        <!-- Executive Summary -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-chart-line mr-3 text-blue-600"></i>Executive Summary
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Product Vision</h3>
+                    <p class="text-gray-600 mb-4">Cleara Property Owner App is a comprehensive property management platform designed specifically for the GCC market, enabling property owners to seamlessly manage their real estate portfolios, coordinate professional services, and optimize property operations through subscription-based service packages.</p>
+                    
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Target Market</h3>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><strong>Primary:</strong> Individual property owners (1-10 properties) in GCC countries</li>
+                        <li><strong>Secondary:</strong> Small property management companies (10-50 properties)</li>
+                        <li><strong>Tertiary:</strong> Real estate investors and property developers</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Key Value Propositions</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <strong>Subscription-Based Service Access:</strong> Predictable costs with quality-assured service delivery
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <strong>Real-Time Service Coordination:</strong> Live tracking and communication with verified service providers
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <strong>GCC Market Optimization:</strong> Cultural, religious, and regulatory compliance
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <div>
+                                <strong>Portfolio Intelligence:</strong> Data-driven insights for property optimization
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Current Feature Analysis -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-cogs mr-3 text-green-600"></i>Current Feature Analysis
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <div class="feature-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-lg">
+                    <i class="fas fa-user-plus text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">User Registration</h3>
+                    <p class="text-gray-600 text-sm">Complete onboarding with real-time validation, OTP verification, and notification setup</p>
+                </div>
+                
+                <div class="feature-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-lg">
+                    <i class="fas fa-home text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Property Management</h3>
+                    <p class="text-gray-600 text-sm">Multi-media property addition with GPS location, photo documentation, and instant activation</p>
+                </div>
+                
+                <div class="feature-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-lg">
+                    <i class="fas fa-credit-card text-3xl text-purple-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Subscription Billing</h3>
+                    <p class="text-gray-600 text-sm">Transparent pricing with Apple Pay integration, VAT calculation, and receipt generation</p>
+                </div>
+                
+                <div class="feature-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-lg">
+                    <i class="fas fa-calendar-check text-3xl text-orange-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Service Scheduling</h3>
+                    <p class="text-gray-600 text-sm">Advanced booking system with predefined time slots and automated provider assignment</p>
+                </div>
+                
+                <div class="feature-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-lg">
+                    <i class="fas fa-eye text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Real-Time Tracking</h3>
+                    <p class="text-gray-600 text-sm">Live service status updates, countdown timers, and progress monitoring</p>
+                </div>
+                
+                <div class="feature-card bg-gradient-to-br from-indigo-50 to-indigo-100 p-6 rounded-lg">
+                    <i class="fas fa-star text-3xl text-indigo-600 mb-4"></i>
+                    <h3 class="text-lg font-semibold mb-2">Quality Verification</h3>
+                    <p class="text-gray-600 text-sm">Photo evidence review, service rating, and feedback system</p>
+                </div>
+            </div>
+
+            <!-- Detailed Feature Breakdown -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Subscription Package Structure</h3>
+                <div class="bg-white p-4 rounded border-l-4 border-green-500">
+                    <h4 class="font-semibold text-green-700">Basic Package - 900 SAR/month</h4>
+                    <ul class="mt-2 space-y-1 text-sm text-gray-600">
+                        <li>• Bathroom amenities provision</li>
+                        <li>• Bed linen washing & sanitization</li>
+                        <li>• Surface & interior glass cleaning</li>
+                        <li>• Quality assurance team provision</li>
+                        <li>• Monthly billing with 15% VAT transparency</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey Documentation -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-route mr-3 text-blue-600"></i>Complete User Journey Flows
+            </h2>
+            
+            <!-- Registration Flow -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-blue-600">1. User Registration & Onboarding</h3>
+                <div class="bg-blue-50 p-6 rounded-lg">
+                    <div class="grid lg:grid-cols-4 gap-4">
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">1</div>
+                            <h4 class="font-semibold">App Launch</h4>
+                            <p class="text-sm text-gray-600 mt-1">Splash screen, onboarding carousel with app features</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">2</div>
+                            <h4 class="font-semibold">Data Collection</h4>
+                            <p class="text-sm text-gray-600 mt-1">Personal info, email, phone, password with real-time validation</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">3</div>
+                            <h4 class="font-semibold">OTP Verification</h4>
+                            <p class="text-sm text-gray-600 mt-1">6-digit SMS verification with 120-second timer</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">4</div>
+                            <h4 class="font-semibold">Dashboard Access</h4>
+                            <p class="text-sm text-gray-600 mt-1">Notification permissions, main dashboard with property portfolio</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Property Addition Flow -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-green-600">2. Property Addition Process</h3>
+                <div class="bg-green-50 p-6 rounded-lg">
+                    <div class="grid lg:grid-cols-5 gap-4">
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">1</div>
+                            <h4 class="font-semibold">Photo Upload</h4>
+                            <p class="text-sm text-gray-600 mt-1">Exterior, door, interior photos with quality guidelines</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">2</div>
+                            <h4 class="font-semibold">Property Details</h4>
+                            <p class="text-sm text-gray-600 mt-1">Building name, unit number with validation</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">3</div>
+                            <h4 class="font-semibold">Location Data</h4>
+                            <p class="text-sm text-gray-600 mt-1">GPS-based address with map integration</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">4</div>
+                            <h4 class="font-semibold">Area Selection</h4>
+                            <p class="text-sm text-gray-600 mt-1">District classification with pre-defined options</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">5</div>
+                            <h4 class="font-semibold">Activation</h4>
+                            <p class="text-sm text-gray-600 mt-1">Immediate "Active" status with subscription options</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Service Request Flow -->
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold mb-4 text-purple-600">3. Service Request & Execution</h3>
+                <div class="bg-purple-50 p-6 rounded-lg">
+                    <div class="grid lg:grid-cols-6 gap-4">
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">1</div>
+                            <h4 class="font-semibold">Subscription Selection</h4>
+                            <p class="text-sm text-gray-600 mt-1">Active package identification</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">2</div>
+                            <h4 class="font-semibold">Date & Time</h4>
+                            <p class="text-sm text-gray-600 mt-1">Calendar picker with 3-hour slots</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">3</div>
+                            <h4 class="font-semibold">Provider Assignment</h4>
+                            <p class="text-sm text-gray-600 mt-1">Automated team allocation</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">4</div>
+                            <h4 class="font-semibold">Readiness Confirmation</h4>
+                            <p class="text-sm text-gray-600 mt-1">"Check Out" with access details</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">5</div>
+                            <h4 class="font-semibold">Service Execution</h4>
+                            <p class="text-sm text-gray-600 mt-1">Live tracking with status updates</p>
+                        </div>
+                        <div class="workflow-step bg-white p-4 rounded shadow">
+                            <div class="w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold mb-2">6</div>
+                            <h4 class="font-semibold">Completion & Review</h4>
+                            <p class="text-sm text-gray-600 mt-1">Photo evidence, rating, feedback</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enhanced Cleaning Request Process -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-broom mr-3 text-orange-600"></i>Enhanced Cleaning Request Process
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-orange-600">Property Owner Requirements</h3>
+                    <div class="space-y-4">
+                        <div class="bg-orange-50 p-4 rounded-lg border-l-4 border-orange-500">
+                            <h4 class="font-semibold text-orange-700 mb-2">Advanced Booking Rules</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• <strong>12-hour minimum advance booking</strong></li>
+                                <li>• Latest same-day submission: 3 AM</li>
+                                <li>• Time slot options: 12-3 PM, 1-4 PM, 2-5 PM, 3-6 PM</li>
+                                <li>• Cultural considerations (prayer times, Ramadan)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">"Check Out" Confirmation System</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Unit vacancy verification required</li>
+                                <li>• Access code/key information sharing</li>
+                                <li>• Special instructions for cleaning team</li>
+                                <li>• Pre-service property preparation checklist</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg border-l-4 border-green-500">
+                            <h4 class="font-semibold text-green-700 mb-2">Photo Review & Confirmation</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Review uploaded completion photos</li>
+                                <li>• Service quality confirmation</li>
+                                <li>• Automatic photo deletion post-approval</li>
+                                <li>• Issue reporting and resolution</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Service Provider Workflow</h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500">
+                            <h4 class="font-semibold text-blue-700 mb-2">Automatic Request Acceptance</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Requests automatically accepted</li>
+                                <li>• Cannot enter until "Check Out" confirmed</li>
+                                <li>• Access to property details and instructions</li>
+                                <li>• Navigation integration for location</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-500">
+                            <h4 class="font-semibold text-yellow-700 mb-2">3-Hour Service Window</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Maximum 3 hours for completion</li>
+                                <li>• Real-time progress tracking</li>
+                                <li>• Milestone reporting system</li>
+                                <li>• Quality assurance checkpoints</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-purple-50 p-4 rounded-lg border-l-4 border-purple-500">
+                            <h4 class="font-semibold text-purple-700 mb-2">Completion Documentation</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Mandatory photo uploads as proof</li>
+                                <li>• "Done / Unit Ready" confirmation</li>
+                                <li>• Service notes and observations</li>
+                                <li>• Issue reporting for property owner</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gap Analysis & Missing Features -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-exclamation-triangle mr-3 text-red-600"></i>Gap Analysis & Missing Features
+            </h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+                <!-- Emergency Services -->
+                <div class="bg-red-50 border-l-4 border-red-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-red-700 mb-3">
+                        <i class="fas fa-ambulance mr-2"></i>Emergency Services
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• 24/7 emergency response system</li>
+                        <li>• Critical issue escalation (water leaks, electrical)</li>
+                        <li>• Emergency contact management</li>
+                        <li>• Priority provider dispatch</li>
+                        <li>• Emergency cost authorization</li>
+                    </ul>
+                </div>
+                
+                <!-- Multi-Property Management -->
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-blue-700 mb-3">
+                        <i class="fas fa-building mr-2"></i>Multi-Property Management
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Bulk service scheduling</li>
+                        <li>• Portfolio analytics dashboard</li>
+                        <li>• Cross-property cost optimization</li>
+                        <li>• Property manager role management</li>
+                        <li>• Consolidated reporting</li>
+                    </ul>
+                </div>
+                
+                <!-- Communication Features -->
+                <div class="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-green-700 mb-3">
+                        <i class="fas fa-comments mr-2"></i>Communication Features
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• In-app messaging with providers</li>
+                        <li>• Video call capability</li>
+                        <li>• Voice messages and instructions</li>
+                        <li>• Photo sharing for issues</li>
+                        <li>• Translation services</li>
+                    </ul>
+                </div>
+                
+                <!-- Smart Home Integration -->
+                <div class="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-purple-700 mb-3">
+                        <i class="fas fa-home mr-2"></i>Smart Home Integration
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Smart lock integration</li>
+                        <li>• IoT device monitoring</li>
+                        <li>• Automated access control</li>
+                        <li>• Environmental sensors</li>
+                        <li>• Energy management</li>
+                    </ul>
+                </div>
+                
+                <!-- Advanced Scheduling -->
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-yellow-700 mb-3">
+                        <i class="fas fa-calendar-alt mr-2"></i>Advanced Scheduling
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Recurring service automation</li>
+                        <li>• Calendar integration (Google, Outlook)</li>
+                        <li>• Seasonal service reminders</li>
+                        <li>• Maintenance schedule optimization</li>
+                        <li>• Conflict resolution algorithms</li>
+                    </ul>
+                </div>
+                
+                <!-- Financial Management -->
+                <div class="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-lg">
+                    <h3 class="text-lg font-semibold text-indigo-700 mb-3">
+                        <i class="fas fa-chart-pie mr-2"></i>Financial Management
+                    </h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Expense tracking and categorization</li>
+                        <li>• Budget planning and alerts</li>
+                        <li>• ROI analysis for rental properties</li>
+                        <li>• Tax preparation assistance</li>
+                        <li>• Invoice management system</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Additional Missing Features -->
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Additional Critical Missing Features</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Guest Access Management</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Short-term rental integration (Airbnb, Booking.com)</li>
+                            <li>• Guest check-in/check-out coordination</li>
+                            <li>• Mid-stay service scheduling</li>
+                            <li>• Guest communication automation</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Document Management</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Property document storage (deeds, permits)</li>
+                            <li>• Insurance policy management</li>
+                            <li>• Warranty tracking and alerts</li>
+                            <li>• Service history documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GCC Market Requirements -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-globe-asia mr-3 text-indigo-600"></i>GCC Market-Specific Requirements
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-indigo-600">Cultural & Religious Considerations</h3>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-indigo-700 mb-2">Prayer Time Integration</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Automatic prayer time detection by location</li>
+                                <li>• Service scheduling around prayer times</li>
+                                <li>• Provider break time accommodation</li>
+                                <li>• Ramadan working hour adjustments</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Weekend & Holiday Calendar</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Country-specific weekend patterns (Thu-Fri, Fri-Sat)</li>
+                                <li>• Islamic calendar integration</li>
+                                <li>• National holiday scheduling</li>
+                                <li>• Religious event considerations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-blue-600">Regional Payment Integration</h3>
+                    <div class="space-y-4">
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Local Payment Methods</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• SADAD (Saudi Arabia)</li>
+                                <li>• STC Pay integration</li>
+                                <li>• UAE banks and PayBy</li>
+                                <li>• Kuwait K-Net system</li>
+                                <li>• Bahrain BenefitPay</li>
+                                <li>• Qatar QNB mobile wallet</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-yellow-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-yellow-700 mb-2">Regulatory Compliance</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• VAT compliance (5-15% by country)</li>
+                                <li>• Local business licensing</li>
+                                <li>• Data protection regulations</li>
+                                <li>• Financial services compliance</li>
+                                <li>• Consumer protection laws</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Multi-Language Support</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Primary Languages</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Arabic (Modern Standard)</li>
+                            <li>• Local Arabic dialects</li>
+                            <li>• English (International)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Expatriate Languages</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Hindi/Urdu</li>
+                            <li>• Filipino/Tagalog</li>
+                            <li>• Bengali</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Business Languages</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• French</li>
+                            <li>• German</li>
+                            <li>• Russian</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Architecture -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-server mr-3 text-purple-600"></i>Technical Architecture & Implementation
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-purple-600">Current Technical Stack</h3>
+                    <div class="space-y-4">
+                        <div class="bg-purple-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-purple-700 mb-2">Frontend Architecture</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Native iOS development (Swift/SwiftUI)</li>
+                                <li>• Real-time validation framework</li>
+                                <li>• Native UI components integration</li>
+                                <li>• Offline-first data architecture</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-blue-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-blue-700 mb-2">Backend Services</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• RESTful API architecture</li>
+                                <li>• Real-time synchronization system</li>
+                                <li>• Push notification service</li>
+                                <li>• Payment gateway integration</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-green-600">Required Infrastructure Enhancements</h3>
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-green-700 mb-2">Scalability Requirements</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Microservices architecture migration</li>
+                                <li>• Auto-scaling infrastructure</li>
+                                <li>• Regional data centers (GCC)</li>
+                                <li>• CDN implementation</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="bg-orange-50 p-4 rounded-lg">
+                            <h4 class="font-semibold text-orange-700 mb-2">Security Enhancements</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• End-to-end encryption</li>
+                                <li>• Multi-factor authentication</li>
+                                <li>• Biometric security integration</li>
+                                <li>• Regular security auditing</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Integration Requirements</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold text-gray-700 mb-2">Payment Gateways</h4>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Regional payment processors</li>
+                            <li>• International card networks</li>
+                            <li>• Digital wallet integration</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold text-gray-700 mb-2">Mapping Services</h4>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• Google Maps integration</li>
+                            <li>• Apple Maps support</li>
+                            <li>• Local mapping providers</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold text-gray-700 mb-2">Communication APIs</h4>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• SMS gateway integration</li>
+                            <li>• Push notification services</li>
+                            <li>• Video calling APIs</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow">
+                        <h4 class="font-semibold text-gray-700 mb-2">Analytics Platforms</h4>
+                        <ul class="text-xs text-gray-600 space-y-1">
+                            <li>• User behavior tracking</li>
+                            <li>• Performance monitoring</li>
+                            <li>• Business intelligence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Implementation Roadmap -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-road mr-3 text-green-600"></i>Implementation Roadmap & Success Metrics
+            </h2>
+            
+            <div class="space-y-6">
+                <!-- Phase 1 -->
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-xl font-semibold text-green-700 mb-4">Phase 1 - Foundation Enhancement (Months 1-6)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Core Improvements</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Enhanced cleaning request process implementation</li>
+                                <li>• 12-hour advance booking system</li>
+                                <li>• "Check Out" confirmation workflow</li>
+                                <li>• Photo review and auto-deletion system</li>
+                                <li>• Emergency service framework</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Regional Localization</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• GCC payment method integration</li>
+                                <li>• Multi-language support (Arabic, English)</li>
+                                <li>• Prayer time and cultural calendar</li>
+                                <li>• Regional regulatory compliance</li>
+                                <li>• Local service provider network</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-4">Phase 2 - Service Excellence (Months 7-12)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">Communication Enhancement</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• In-app messaging system</li>
+                                <li>• Video calling integration</li>
+                                <li>• Multi-language communication</li>
+                                <li>• Real-time provider tracking</li>
+                                <li>• Advanced notification system</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Smart Features</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Smart home integration (locks, sensors)</li>
+                                <li>• Automated scheduling system</li>
+                                <li>• Predictive maintenance alerts</li>
+                                <li>• Energy management integration</li>
+                                <li>• Guest access management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="bg-purple-50 p-6 rounded-lg border-l-4 border-purple-500">
+                    <h3 class="text-xl font-semibold text-purple-700 mb-4">Phase 3 - Intelligence & Growth (Months 13-18)</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h4 class="font-semibold mb-2">AI & Analytics</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI-powered service recommendations</li>
+                                <li>• Predictive analytics dashboard</li>
+                                <li>• Property performance insights</li>
+                                <li>• Cost optimization algorithms</li>
+                                <li>• Market intelligence integration</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold mb-2">Business Tools</h4>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Multi-property management dashboard</li>
+                                <li>• Financial management suite</li>
+                                <li>• Document management system</li>
+                                <li>• Advanced reporting tools</li>
+                                <li>• API for third-party integrations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Success Metrics -->
+            <div class="mt-8 bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Key Success Metrics & KPIs</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="bg-white p-4 rounded shadow text-center">
+                        <div class="text-2xl font-bold text-green-600 mb-1">100K+</div>
+                        <div class="text-sm text-gray-600">Active Users by Month 12</div>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow text-center">
+                        <div class="text-2xl font-bold text-blue-600 mb-1">4.5+</div>
+                        <div class="text-sm text-gray-600">Average App Rating</div>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow text-center">
+                        <div class="text-2xl font-bold text-purple-600 mb-1">90%+</div>
+                        <div class="text-sm text-gray-600">Customer Satisfaction</div>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow text-center">
+                        <div class="text-2xl font-bold text-orange-600 mb-1">99.5%</div>
+                        <div class="text-sm text-gray-600">Platform Reliability</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Competitive Analysis -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6 section-divider pl-6">
+                <i class="fas fa-chart-bar mr-3 text-indigo-600"></i>Competitive Positioning & Market Differentiation
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-indigo-50 p-6 rounded-lg border-l-4 border-indigo-500">
+                    <h3 class="text-lg font-semibold text-indigo-700 mb-3">Unique Value Propositions</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Subscription-based predictable pricing</li>
+                        <li>• Real-time dual-app coordination</li>
+                        <li>• GCC cultural integration</li>
+                        <li>• Quality-assured service network</li>
+                        <li>• Comprehensive property lifecycle management</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+                    <h3 class="text-lg font-semibold text-green-700 mb-3">Market Advantages</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• Local payment integration</li>
+                        <li>• Prayer time consideration</li>
+                        <li>• Bilingual support (Arabic/English)</li>
+                        <li>• Regional regulatory compliance</li>
+                        <li>• Cultural sensitivity in service delivery</li>
+                    </ul>
+                </div>
+                
+                <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                    <h3 class="text-lg font-semibold text-orange-700 mb-3">Technology Differentiators</h3>
+                    <ul class="text-sm text-gray-600 space-y-2">
+                        <li>• AI-powered service optimization</li>
+                        <li>• Smart home integration readiness</li>
+                        <li>• Predictive maintenance algorithms</li>
+                        <li>• Automated provider matching</li>
+                        <li>• Real-time service coordination</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bg-gray-50 p-6 rounded-lg">
+                <h3 class="text-xl font-semibold mb-4">Regional Market Positioning Strategy</h3>
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Target Market Segmentation</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• <strong>Primary:</strong> High-income property owners seeking premium services</li>
+                            <li>• <strong>Secondary:</strong> Real estate investors managing multiple properties</li>
+                            <li>• <strong>Tertiary:</strong> Corporate entities with property portfolios</li>
+                            <li>• <strong>Emerging:</strong> Short-term rental (Airbnb) hosts</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-700 mb-2">Market Entry Strategy</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• Launch in high-density urban areas (Riyadh, Dubai)</li>
+                            <li>• Partnership with local service providers</li>
+                            <li>• Regulatory compliance and licensing</li>
+                            <li>• Cultural adaptation and localization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conclusion -->
+        <section class="bg-gradient-to-br from-blue-600 to-purple-700 text-white rounded-lg p-8">
+            <h2 class="text-3xl font-bold mb-6">
+                <i class="fas fa-flag-checkered mr-3"></i>Executive Conclusion & Next Steps
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Strategic Recommendations</h3>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li>• <strong>Prioritize Phase 1 implementation</strong> to address critical gaps in cleaning request workflow</li>
+                        <li>• <strong>Invest heavily in GCC localization</strong> for market differentiation</li>
+                        <li>• <strong>Establish strategic partnerships</strong> with regional service providers and payment gateways</li>
+                        <li>• <strong>Develop comprehensive quality assurance</strong> framework for service excellence</li>
+                        <li>• <strong>Build scalable architecture</strong> to support rapid regional expansion</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Investment Priorities</h3>
+                    <ul class="space-y-2 text-sm opacity-90">
+                        <li>• <strong>Technology Infrastructure:</strong> 40% - Platform scalability and reliability</li>
+                        <li>• <strong>Market Localization:</strong> 25% - Cultural adaptation and compliance</li>
+                        <li>• <strong>Service Network:</strong> 20% - Provider quality and coverage</li>
+                        <li>• <strong>User Experience:</strong> 10% - Interface optimization and personalization</li>
+                        <li>• <strong>Business Intelligence:</strong> 5% - Analytics and optimization tools</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 bg-white bg-opacity-10 p-6 rounded-lg">
+                <h3 class="text-lg font-semibold mb-2">Success Criteria for Market Leadership</h3>
+                <p class="text-sm opacity-90">
+                    The Cleara Property Owner App is positioned to become the leading property service platform in the GCC region by delivering 
+                    culturally-adapted, technology-driven solutions that address the unique needs of regional property owners. Success will be 
+                    measured by user adoption rates, service quality metrics, and market penetration across target GCC countries within the 
+                    18-month implementation timeline.
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6 mt-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-sm opacity-75">Cleara Property Owner App - Product Requirements Document v1.0</p>
+            <p class="text-xs opacity-50 mt-2">Comprehensive analysis based on detailed user flow examination and GCC market requirements</p>
+        </div>
+    </footer>
+</body>
+</html>

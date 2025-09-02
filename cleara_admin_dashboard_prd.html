@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleara Admin Dashboard - Complete Management Platform PRD</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; }
+        .chart-container { height: 400px; }
+        .small-chart { height: 250px; }
+        .mini-chart { height: 200px; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- Header -->
+    <div class="bg-gray-800 text-white p-8">
+        <div class="max-w-7xl mx-auto">
+            <h1 class="text-3xl font-bold mb-4"><i class="fas fa-tachometer-alt mr-3"></i>Cleara Admin Dashboard</h1>
+            <p class="text-lg text-gray-300">Complete Management Platform - Product Requirements Document</p>
+            <p class="text-gray-400 mt-2">Comprehensive administrative control for property management and service delivery across the GCC region</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto p-6">
+        
+        <!-- Executive Summary -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Executive Summary</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3"><i class="fas fa-bullseye mr-2 text-blue-600"></i>Platform Vision</h3>
+                    <p class="text-gray-700">Centralized administrative control system for managing the complete Cleara ecosystem, including property owners, service providers, financial operations, and service delivery across GCC markets.</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3"><i class="fas fa-users mr-2 text-green-600"></i>Target Users</h3>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• Platform administrators</li>
+                        <li>• Operations managers</li>
+                        <li>• Financial controllers</li>
+                        <li>• Quality assurance teams</li>
+                        <li>• Regional managers</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3"><i class="fas fa-trophy mr-2 text-purple-600"></i>Key Objectives</h3>
+                    <ul class="text-gray-700 space-y-1">
+                        <li>• 360° platform oversight</li>
+                        <li>• Real-time performance monitoring</li>
+                        <li>• Quality assurance automation</li>
+                        <li>• Financial transparency</li>
+                        <li>• Operational excellence</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg border-l-4 border-teal-500">
+                <h4 class="text-lg font-semibold text-gray-800 mb-3">Platform Scope & Scale</h4>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 text-center">
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-teal-600">10K+</div>
+                        <div class="text-sm text-gray-600">Property Owners</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-green-600">2K+</div>
+                        <div class="text-sm text-gray-600">Service Providers</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-blue-600">50K+</div>
+                        <div class="text-sm text-gray-600">Properties Managed</div>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg">
+                        <div class="text-2xl font-bold text-purple-600">6</div>
+                        <div class="text-sm text-gray-600">GCC Countries</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dashboard Overview -->
+        <section class="bg-white rounded-lg shadow-md p-8 mb-8 border border-gray-200">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-500 pl-4">Dashboard Architecture Overview</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Core Dashboard Modules</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center p-3 bg-teal-50 rounded-lg border border-teal-200">
+                            <i class="fas fa-users-cog text-teal-600 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-800">User Management Center</div>
+                                <div class="text-sm text-gray-600">Property owners, providers, admin users</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-green-50 rounded-lg border border-green-200">
+                            <i class="fas fa-chart-bar text-green-600 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-800">Analytics & Reporting</div>
+                                <div class="text-sm text-gray-600">Performance metrics, financial tracking</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg border border-blue-200">
+                            <i class="fas fa-cogs text-blue-600 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-800">Service Management</div>
+                                <div class="text-sm text-gray-600">Service delivery, quality control</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center p-3 bg-purple-50 rounded-lg border border-purple-200">
+                            <i class="fas fa-money-bill-wave text-purple-600 mr-3"></i>
+                            <div>
+                                <div class="font-semibold text-gray-800">Financial Operations</div>
+                                <div class="text-sm text-gray-600">Revenue, expenses, provider payments</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Real-Time Monitoring</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg mini-chart">
+                        <canvas id="realtimeChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="bg-gradient-to-r from-teal-500 to-green-500 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-teal-100 text-sm">Active Services Today</div>
+                            <div class="text-2xl font-bold">1,247</div>
+                            <div class="text-teal-200 text-xs">+12% from yesterday</div>
+                        </div>
+                        <i class="fas fa-broom text-3xl text-teal-200"></i>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-500 to-indigo-500 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-blue-100 text-sm">Revenue Today</div>
+                            <div class="text-2xl font-bold">₹2.4M</div>
+                            <div class="text-blue-200 text-xs">+8% from yesterday</div>
+                        </div>
+                        <i class="fas fa-chart-line text-3xl text-blue-200"></i>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-purple-100 text-sm">Customer Satisfaction</div>
+                            <div class="text-2xl font-bold">4.8/5</div>
+                            <div class="text-purple-200 text-xs">+0.2 this month</div>
+                        </div>
+                        <i class="fas fa-star text-3xl text-purple-200"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Management System -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-users text-teal-600 mr-3"></i>User Management System</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Property Owner Management</h3>
+                    <div class="space-y-4">
+                        <div class="bg-teal-50 p-4 rounded-lg border border-teal-200">
+                            <h4 class="font-semibold text-teal-800 mb-2"><i class="fas fa-user-plus mr-2"></i>Registration & Onboarding</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Manual approval workflow management</li>
+                                <li>• Document verification system</li>
+                                <li>• KYC compliance tracking</li>
+                                <li>• Onboarding progress monitoring</li>
+                                <li>• Welcome sequence automation</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <h4 class="font-semibold text-green-800 mb-2"><i class="fas fa-user-cog mr-2"></i>Account Management</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Profile completion tracking</li>
+                                <li>• Subscription status monitoring</li>
+                                <li>• Property portfolio overview</li>
+                                <li>• Payment history analysis</li>
+                                <li>• Support ticket management</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-chart-pie mr-2"></i>Engagement Analytics</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• App usage patterns</li>
+                                <li>• Service request frequency</li>
+                                <li>• Feature adoption rates</li>
+                                <li>• Churn risk assessment</li>
+                                <li>• Satisfaction scoring</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">User Analytics Dashboard</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="userGrowthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">User Lifecycle Management</h3>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Stage</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Actions Required</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Automation Level</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">SLA</th>
+                                <th class="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase">Success Metrics</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <td class="px-4 py-3 text-sm font-medium text-gray-900">Registration</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">OTP verification, profile completion</td>
+                                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Automated</span></td>
+                                <td class="px-4 py-3 text-sm text-gray-700">Instant</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">99% completion rate</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-sm font-medium text-gray-900">Property Addition</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">Photo validation, address verification</td>
+                                <td class="px-4 py-3"><span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Semi-Auto</span></td>
+                                <td class="px-4 py-3 text-sm text-gray-700">2 hours</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">95% first-time approval</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-sm font-medium text-gray-900">Subscription</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">Payment processing, package activation</td>
+                                <td class="px-4 py-3"><span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Automated</span></td>
+                                <td class="px-4 py-3 text-sm text-gray-700">5 minutes</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">98% payment success</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-3 text-sm font-medium text-gray-900">First Service</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">Provider assignment, quality check</td>
+                                <td class="px-4 py-3"><span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Managed</span></td>
+                                <td class="px-4 py-3 text-sm text-gray-700">24 hours</td>
+                                <td class="px-4 py-3 text-sm text-gray-700">4.5+ star rating</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Provider Management -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-hard-hat text-teal-600 mr-3"></i>Service Provider Management</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+                <div class="bg-gradient-to-br from-orange-50 to-red-50 p-6 rounded-lg border border-orange-200">
+                    <h3 class="text-lg font-semibold text-orange-800 mb-3"><i class="fas fa-user-check mr-2"></i>Provider Onboarding</h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex justify-between">
+                            <span>Pending Applications</span>
+                            <span class="font-semibold">47</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Under Review</span>
+                            <span class="font-semibold">23</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Approved Today</span>
+                            <span class="font-semibold text-green-600">12</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Rejected</span>
+                            <span class="font-semibold text-red-600">3</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-green-50 to-teal-50 p-6 rounded-lg border border-green-200">
+                    <h3 class="text-lg font-semibold text-green-800 mb-3"><i class="fas fa-star mr-2"></i>Performance Overview</h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex justify-between">
+                            <span>Active Providers</span>
+                            <span class="font-semibold">1,847</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Avg Rating</span>
+                            <span class="font-semibold text-green-600">4.7/5</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>On-Time Rate</span>
+                            <span class="font-semibold">94%</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Quality Score</span>
+                            <span class="font-semibold text-blue-600">92%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-lg border border-blue-200">
+                    <h3 class="text-lg font-semibold text-blue-800 mb-3"><i class="fas fa-tools mr-2"></i>Service Categories</h3>
+                    <div class="space-y-2 text-sm text-gray-700">
+                        <div class="flex justify-between">
+                            <span>Cleaning Services</span>
+                            <span class="font-semibold">1,245</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Maintenance</span>
+                            <span class="font-semibold">342</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Specialized</span>
+                            <span class="font-semibold">189</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span>Emergency</span>
+                            <span class="font-semibold">71</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Provider Verification Process</h3>
+                    <div class="space-y-4">
+                        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-yellow-800"><i class="fas fa-id-card mr-2"></i>Document Verification</h4>
+                                <span class="bg-yellow-200 text-yellow-800 px-2 py-1 rounded-full text-xs">2-3 Days</span>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Commercial registration validation</li>
+                                <li>• Insurance certificate verification</li>
+                                <li>• Professional license confirmation</li>
+                                <li>• Background check completion</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-blue-800"><i class="fas fa-graduation-cap mr-2"></i>Skills Assessment</h4>
+                                <span class="bg-blue-200 text-blue-800 px-2 py-1 rounded-full text-xs">1 Day</span>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Technical skill evaluation</li>
+                                <li>• Quality standard training</li>
+                                <li>• Platform usage certification</li>
+                                <li>• Customer service assessment</li>
+                            </ul>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-green-800"><i class="fas fa-check-circle mr-2"></i>Approval & Activation</h4>
+                                <span class="bg-green-200 text-green-800 px-2 py-1 rounded-full text-xs">Same Day</span>
+                            </div>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Profile completion verification</li>
+                                <li>• Service area assignment</li>
+                                <li>• Payment method setup</li>
+                                <li>• Initial job assignment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Provider Performance Analytics</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="providerPerformanceChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Provider Quality Management</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+                    <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-red-800">Critical Issues</h4>
+                            <span class="bg-red-500 text-white px-2 py-1 rounded-full text-xs">5</span>
+                        </div>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li>• Service quality complaints</li>
+                            <li>• No-show incidents</li>
+                            <li>• Safety violations</li>
+                        </ul>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-yellow-800">Warnings</h4>
+                            <span class="bg-yellow-500 text-white px-2 py-1 rounded-full text-xs">12</span>
+                        </div>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li>• Late arrivals</li>
+                            <li>• Communication issues</li>
+                            <li>• Minor quality issues</li>
+                        </ul>
+                    </div>
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-blue-800">Training Needed</h4>
+                            <span class="bg-blue-500 text-white px-2 py-1 rounded-full text-xs">28</span>
+                        </div>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li>• Skill upgrades</li>
+                            <li>• New service training</li>
+                            <li>• Platform updates</li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="font-semibold text-green-800">Top Performers</h4>
+                            <span class="bg-green-500 text-white px-2 py-1 rounded-full text-xs">156</span>
+                        </div>
+                        <ul class="text-xs text-gray-700 space-y-1">
+                            <li>• 5-star ratings</li>
+                            <li>• Exceptional service</li>
+                            <li>• Customer favorites</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Delivery Management -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-clipboard-check text-teal-600 mr-3"></i>Service Delivery Management</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Real-Time Service Monitoring</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="serviceStatusChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Service Performance Metrics</h3>
+                    <div class="space-y-4">
+                        <div class="bg-teal-50 p-4 rounded-lg border border-teal-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-teal-800">On-Time Completion Rate</span>
+                                <span class="text-2xl font-bold text-teal-600">94.2%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-teal-500 h-2 rounded-full" style="width: 94.2%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-green-800">Customer Satisfaction</span>
+                                <span class="text-2xl font-bold text-green-600">4.8/5</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-green-500 h-2 rounded-full" style="width: 96%"></div>
+                            </div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-blue-800">Quality Score</span>
+                                <span class="text-2xl font-bold text-blue-600">92.1%</span>
+                            </div>
+                            <div class="w-full bg-gray-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 92.1%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Service Request Processing Pipeline</h3>
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-4">
+                    <div class="bg-blue-50 p-4 rounded-lg border border-blue-200 text-center">
+                        <div class="text-2xl font-bold text-blue-600">247</div>
+                        <div class="text-sm text-gray-600 font-medium">Pending Requests</div>
+                        <div class="text-xs text-blue-600 mt-1">Within 12h window</div>
+                    </div>
+                    <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200 text-center">
+                        <div class="text-2xl font-bold text-yellow-600">89</div>
+                        <div class="text-sm text-gray-600 font-medium">Ready for Service</div>
+                        <div class="text-xs text-yellow-600 mt-1">Client checked out</div>
+                    </div>
+                    <div class="bg-green-50 p-4 rounded-lg border border-green-200 text-center">
+                        <div class="text-2xl font-bold text-green-600">156</div>
+                        <div class="text-sm text-gray-600 font-medium">In Progress</div>
+                        <div class="text-xs text-green-600 mt-1">Active services</div>
+                    </div>
+                    <div class="bg-purple-50 p-4 rounded-lg border border-purple-200 text-center">
+                        <div class="text-2xl font-bold text-purple-600">73</div>
+                        <div class="text-sm text-gray-600 font-medium">Pending Review</div>
+                        <div class="text-xs text-purple-600 mt-1">Awaiting approval</div>
+                    </div>
+                    <div class="bg-teal-50 p-4 rounded-lg border border-teal-200 text-center">
+                        <div class="text-2xl font-bold text-teal-600">1,042</div>
+                        <div class="text-sm text-gray-600 font-medium">Completed Today</div>
+                        <div class="text-xs text-teal-600 mt-1">Photos confirmed</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Quality Assurance Workflow</h3>
+                    <div class="space-y-3">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-800"><i class="fas fa-camera text-teal-600 mr-2"></i>Photo Verification</h4>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">Automated</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI-powered image quality analysis</li>
+                                <li>• Before/after comparison validation</li>
+                                <li>• Automatic flagging of issues</li>
+                                <li>• Quality score generation</li>
+                            </ul>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-800"><i class="fas fa-clock text-blue-600 mr-2"></i>Timeline Compliance</h4>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Real-time</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• 3-hour completion window monitoring</li>
+                                <li>• Early completion bonuses</li>
+                                <li>• Late completion penalties</li>
+                                <li>• Schedule optimization alerts</li>
+                            </ul>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <h4 class="font-semibold text-gray-800"><i class="fas fa-star text-yellow-600 mr-2"></i>Customer Feedback</h4>
+                                <span class="bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full text-xs">Manual</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Mandatory rating collection</li>
+                                <li>• Detailed feedback analysis</li>
+                                <li>• Provider performance scoring</li>
+                                <li>• Issue escalation triggers</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Service Quality Trends</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="qualityTrendsChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Management -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-chart-pie text-teal-600 mr-3"></i>Financial Management & Analytics</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-gradient-to-r from-green-400 to-green-600 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-green-100 text-sm">Monthly Revenue</div>
+                            <div class="text-2xl font-bold">₹47.2M</div>
+                            <div class="text-green-200 text-xs">+15.3% MoM</div>
+                        </div>
+                        <i class="fas fa-arrow-trend-up text-2xl text-green-200"></i>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-blue-100 text-sm">Provider Payments</div>
+                            <div class="text-2xl font-bold">₹28.4M</div>
+                            <div class="text-blue-200 text-xs">60.2% of revenue</div>
+                        </div>
+                        <i class="fas fa-hand-holding-dollar text-2xl text-blue-200"></i>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-400 to-purple-600 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-purple-100 text-sm">Net Profit</div>
+                            <div class="text-2xl font-bold">₹12.1M</div>
+                            <div class="text-purple-200 text-xs">25.6% margin</div>
+                        </div>
+                        <i class="fas fa-coins text-2xl text-purple-200"></i>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-6 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <div class="text-orange-100 text-sm">Outstanding</div>
+                            <div class="text-2xl font-bold">₹3.8M</div>
+                            <div class="text-orange-200 text-xs">8.1% of revenue</div>
+                        </div>
+                        <i class="fas fa-exclamation-triangle text-2xl text-orange-200"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Revenue Breakdown</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Payment Method Analytics</h3>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-green-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fab fa-apple-pay text-2xl text-green-600 mr-3"></i>
+                                <span class="font-medium">Apple Pay</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-green-600">42.3%</div>
+                                <div class="text-xs text-gray-600">₹19.9M</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-blue-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-credit-card text-2xl text-blue-600 mr-3"></i>
+                                <span class="font-medium">Credit Cards</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-blue-600">31.7%</div>
+                                <div class="text-xs text-gray-600">₹15.0M</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-teal-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-mobile-alt text-2xl text-teal-600 mr-3"></i>
+                                <span class="font-medium">Digital Wallets</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-teal-600">18.4%</div>
+                                <div class="text-xs text-gray-600">₹8.7M</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-purple-50 rounded-lg">
+                            <div class="flex items-center">
+                                <i class="fas fa-university text-2xl text-purple-600 mr-3"></i>
+                                <span class="font-medium">Bank Transfer</span>
+                            </div>
+                            <div class="text-right">
+                                <div class="font-bold text-purple-600">7.6%</div>
+                                <div class="text-xs text-gray-600">₹3.6M</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Financial Operations Management</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-file-invoice-dollar text-teal-600 mr-2"></i>Subscription Management</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between"><span>Active Subscriptions</span> <span class="font-medium">8,947</span></li>
+                            <li class="flex justify-between"><span>Monthly Recurring Revenue</span> <span class="font-medium">₹47.2M</span></li>
+                            <li class="flex justify-between"><span>Churn Rate</span> <span class="font-medium text-red-600">3.2%</span></li>
+                            <li class="flex justify-between"><span>Upgrade Rate</span> <span class="font-medium text-green-600">12.1%</span></li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-calculator text-blue-600 mr-2"></i>Cost Management</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between"><span>Provider Costs</span> <span class="font-medium">₹28.4M</span></li>
+                            <li class="flex justify-between"><span>Platform Costs</span> <span class="font-medium">₹4.2M</span></li>
+                            <li class="flex justify-between"><span>Marketing Spend</span> <span class="font-medium">₹2.1M</span></li>
+                            <li class="flex justify-between"><span>Operating Expenses</span> <span class="font-medium">₹0.4M</span></li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-chart-line text-green-600 mr-2"></i>Growth Metrics</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li class="flex justify-between"><span>Customer LTV</span> <span class="font-medium">₹18,450</span></li>
+                            <li class="flex justify-between"><span>Customer CAC</span> <span class="font-medium">₹2,340</span></li>
+                            <li class="flex justify-between"><span>LTV/CAC Ratio</span> <span class="font-medium text-green-600">7.9:1</span></li>
+                            <li class="flex justify-between"><span>Payback Period</span> <span class="font-medium">4.2 months</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Management -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-globe text-teal-600 mr-3"></i>GCC Regional Management</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Market Performance by Country</h3>
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-4 bg-green-500 rounded mr-3"></div>
+                                    <span class="font-medium">Saudi Arabia</span>
+                                </div>
+                                <span class="font-bold text-green-600">₹28.3M (60%)</span>
+                            </div>
+                            <div class="text-sm text-gray-600 grid grid-cols-3 gap-4">
+                                <span>Users: 5,368</span>
+                                <span>Providers: 1,105</span>
+                                <span>Growth: +18%</span>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-4 bg-blue-500 rounded mr-3"></div>
+                                    <span class="font-medium">UAE</span>
+                                </div>
+                                <span class="font-bold text-blue-600">₹12.1M (25%)</span>
+                            </div>
+                            <div class="text-sm text-gray-600 grid grid-cols-3 gap-4">
+                                <span>Users: 2,284</span>
+                                <span>Providers: 471</span>
+                                <span>Growth: +22%</span>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-4 bg-purple-500 rounded mr-3"></div>
+                                    <span class="font-medium">Qatar</span>
+                                </div>
+                                <span class="font-bold text-purple-600">₹4.3M (9%)</span>
+                            </div>
+                            <div class="text-sm text-gray-600 grid grid-cols-3 gap-4">
+                                <span>Users: 817</span>
+                                <span>Providers: 168</span>
+                                <span>Growth: +15%</span>
+                            </div>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex items-center justify-between mb-2">
+                                <div class="flex items-center">
+                                    <div class="w-6 h-4 bg-orange-500 rounded mr-3"></div>
+                                    <span class="font-medium">Kuwait, Bahrain, Oman</span>
+                                </div>
+                                <span class="font-bold text-orange-600">₹2.5M (6%)</span>
+                            </div>
+                            <div class="text-sm text-gray-600 grid grid-cols-3 gap-4">
+                                <span>Users: 578</span>
+                                <span>Providers: 103</span>
+                                <span>Growth: +12%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Regional Growth Trends</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="regionalGrowthChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-language text-teal-600 mr-2"></i>Localization Management</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex justify-between"><span>Arabic Usage</span> <span class="font-medium">78%</span></li>
+                        <li class="flex justify-between"><span>English Usage</span> <span class="font-medium">22%</span></li>
+                        <li class="flex justify-between"><span>Translation Accuracy</span> <span class="font-medium text-green-600">96%</span></li>
+                        <li class="flex justify-between"><span>Cultural Compliance</span> <span class="font-medium text-green-600">98%</span></li>
+                    </ul>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-mosque text-blue-600 mr-2"></i>Cultural Integration</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex justify-between"><span>Prayer Time Compliance</span> <span class="font-medium text-green-600">100%</span></li>
+                        <li class="flex justify-between"><span>Ramadan Adjustments</span> <span class="font-medium text-green-600">Active</span></li>
+                        <li class="flex justify-between"><span>Weekend Scheduling</span> <span class="font-medium text-green-600">Optimized</span></li>
+                        <li class="flex justify-between"><span>Holiday Recognition</span> <span class="font-medium text-green-600">Full Coverage</span></li>
+                    </ul>
+                </div>
+                <div class="border border-gray-200 rounded-lg p-4">
+                    <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-balance-scale text-green-600 mr-2"></i>Regulatory Compliance</h4>
+                    <ul class="space-y-2 text-sm text-gray-600">
+                        <li class="flex justify-between"><span>License Status</span> <span class="font-medium text-green-600">All Current</span></li>
+                        <li class="flex justify-between"><span>Data Protection</span> <span class="font-medium text-green-600">GDPR+ Ready</span></li>
+                        <li class="flex justify-between"><span>Financial Compliance</span> <span class="font-medium text-green-600">100%</span></li>
+                        <li class="flex justify-between"><span>Labor Law Adherence</span> <span class="font-medium text-green-600">Verified</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technical Administration -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-server text-teal-600 mr-3"></i>Technical Administration & Platform Management</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">System Performance Monitoring</h3>
+                    <div class="space-y-4">
+                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-green-800"><i class="fas fa-tachometer-alt mr-2"></i>System Uptime</span>
+                                <span class="text-2xl font-bold text-green-600">99.97%</span>
+                            </div>
+                            <div class="text-sm text-gray-600">Last 30 days: 43,198 / 43,200 minutes</div>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-blue-800"><i class="fas fa-bolt mr-2"></i>Response Time</span>
+                                <span class="text-2xl font-bold text-blue-600">127ms</span>
+                            </div>
+                            <div class="text-sm text-gray-600">Average API response time (95th percentile)</div>
+                        </div>
+                        <div class="bg-teal-50 p-4 rounded-lg border border-teal-200">
+                            <div class="flex justify-between items-center mb-2">
+                                <span class="font-semibold text-teal-800"><i class="fas fa-database mr-2"></i>Database Performance</span>
+                                <span class="text-2xl font-bold text-teal-600">234ms</span>
+                            </div>
+                            <div class="text-sm text-gray-600">Average query execution time</div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Infrastructure Utilization</h3>
+                    <div class="bg-gray-50 p-4 rounded-lg small-chart">
+                        <canvas id="infrastructureChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-4 gap-6 mb-8">
+                <div class="bg-gradient-to-r from-green-400 to-green-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">847K</div>
+                    <div class="text-sm text-green-100">API Calls/Day</div>
+                    <div class="text-xs text-green-200 mt-1">+12% from yesterday</div>
+                </div>
+                <div class="bg-gradient-to-r from-blue-400 to-blue-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">23.4TB</div>
+                    <div class="text-sm text-blue-100">Data Processed</div>
+                    <div class="text-xs text-blue-200 mt-1">Monthly volume</div>
+                </div>
+                <div class="bg-gradient-to-r from-purple-400 to-purple-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">156K</div>
+                    <div class="text-sm text-purple-100">Photos Uploaded</div>
+                    <div class="text-xs text-purple-200 mt-1">Quality verified</div>
+                </div>
+                <div class="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-4 rounded-lg text-center">
+                    <div class="text-2xl font-bold">99.2%</div>
+                    <div class="text-sm text-orange-100">Success Rate</div>
+                    <div class="text-xs text-orange-200 mt-1">Service completion</div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Platform Management Tools</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-shield-alt text-teal-600 mr-2"></i>Security Management</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Real-time threat monitoring</li>
+                            <li>• Automated vulnerability scanning</li>
+                            <li>• Data encryption management</li>
+                            <li>• Access control administration</li>
+                            <li>• Compliance audit trails</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-code-branch text-blue-600 mr-2"></i>Deployment Management</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• CI/CD pipeline oversight</li>
+                            <li>• Feature flag management</li>
+                            <li>• A/B testing coordination</li>
+                            <li>• Release rollback capabilities</li>
+                            <li>• Environment management</li>
+                        </ul>
+                    </div>
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-gray-800 mb-3"><i class="fas fa-chart-area text-green-600 mr-2"></i>Performance Optimization</h4>
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <li>• Auto-scaling configuration</li>
+                            <li>• Cache optimization</li>
+                            <li>• Database query optimization</li>
+                            <li>• CDN performance tuning</li>
+                            <li>• Resource allocation optimization</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Missing Features & Recommendations -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-6"><i class="fas fa-lightbulb text-teal-600 mr-3"></i>Missing Features & Strategic Recommendations</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Critical Missing Features</h3>
+                    <div class="space-y-4">
+                        <div class="bg-red-50 p-4 rounded-lg border border-red-200">
+                            <h4 class="font-semibold text-red-800 mb-2"><i class="fas fa-exclamation-triangle mr-2"></i>High Priority Gaps</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Advanced provider matching algorithms</li>
+                                <li>• Real-time GPS tracking for service providers</li>
+                                <li>• Automated quality scoring system</li>
+                                <li>• Dynamic pricing based on demand</li>
+                                <li>• Comprehensive dispute resolution system</li>
+                            </ul>
+                        </div>
+                        <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-200">
+                            <h4 class="font-semibold text-yellow-800 mb-2"><i class="fas fa-clock mr-2"></i>Medium Priority Additions</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• AI-powered demand forecasting</li>
+                                <li>• Advanced analytics dashboard for providers</li>
+                                <li>• Multi-property bulk operations</li>
+                                <li>• Integration with smart home devices</li>
+                                <li>• Comprehensive training management system</li>
+                            </ul>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
+                            <h4 class="font-semibold text-blue-800 mb-2"><i class="fas fa-rocket mr-2"></i>Future Enhancements</h4>
+                            <ul class="text-sm text-gray-700 space-y-1">
+                                <li>• Machine learning quality prediction</li>
+                                <li>• Blockchain-based payment verification</li>
+                                <li>• AR-powered service verification</li>
+                                <li>• Voice-controlled admin operations</li>
+                                <li>• Predictive maintenance alerts</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Implementation Roadmap</h3>
+                    <div class="space-y-4">
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-semibold text-gray-800">Q1 2024 - Foundation</h4>
+                                <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">In Progress</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Enhanced provider matching system</li>
+                                <li>• Real-time tracking implementation</li>
+                                <li>• Automated quality scoring</li>
+                            </ul>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-semibold text-gray-800">Q2 2024 - Intelligence</h4>
+                                <span class="bg-blue-100 text-blue-800 px-2 py-1 rounded-full text-xs">Planned</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• AI-powered demand forecasting</li>
+                                <li>• Dynamic pricing implementation</li>
+                                <li>• Advanced analytics platform</li>
+                            </ul>
+                        </div>
+                        <div class="border border-gray-200 rounded-lg p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h4 class="font-semibold text-gray-800">Q3-Q4 2024 - Innovation</h4>
+                                <span class="bg-purple-100 text-purple-800 px-2 py-1 rounded-full text-xs">Future</span>
+                            </div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>• Smart home integration</li>
+                                <li>• AR-powered verification</li>
+                                <li>• Blockchain payment systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-teal-50 to-green-50 p-6 rounded-lg border border-teal-200">
+                <h3 class="text-xl font-semibold text-teal-800 mb-4"><i class="fas fa-target mr-2"></i>Strategic Success Metrics</h3>
+                <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-teal-600">50K+</div>
+                        <div class="text-sm text-gray-600">Active Users Target</div>
+                        <div class="text-xs text-teal-600 mt-1">By Q4 2024</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-green-600">₹100M</div>
+                        <div class="text-sm text-gray-600">Annual Revenue Target</div>
+                        <div class="text-xs text-green-600 mt-1">By end of 2024</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-blue-600">4.9/5</div>
+                        <div class="text-sm text-gray-600">Customer Satisfaction</div>
+                        <div class="text-xs text-blue-600 mt-1">Target rating</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-purple-600">99.9%</div>
+                        <div class="text-sm text-gray-600">Platform Reliability</div>
+                        <div class="text-xs text-purple-600 mt-1">Uptime target</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section class="bg-gray-100 text-gray-700 rounded-lg p-6 border border-gray-200">
+            <div class="text-center">
+                <h2 class="text-xl font-bold mb-2">Cleara Admin Dashboard</h2>
+                <p class="text-gray-600 mb-4 text-sm">Comprehensive Management Platform for Property Services Excellence</p>
+                <div class="flex justify-center space-x-8 text-xs text-gray-500">
+                    <span>© 2024 Cleara Platform</span>
+                    <span>•</span>
+                    <span>Admin Dashboard v2.0</span>
+                    <span>•</span>
+                    <span>Last Updated: January 2024</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Real-time monitoring chart
+        const realtimeCtx = document.getElementById('realtimeChart').getContext('2d');
+        new Chart(realtimeCtx, {
+            type: 'line',
+            data: {
+                labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                datasets: [{
+                    label: 'Active Services',
+                    data: [45, 78, 125, 189, 234, 156],
+                    borderColor: 'rgb(20, 184, 166)',
+                    backgroundColor: 'rgba(20, 184, 166, 0.1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // User growth chart
+        const userGrowthCtx = document.getElementById('userGrowthChart').getContext('2d');
+        new Chart(userGrowthCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'New Property Owners',
+                    data: [245, 312, 289, 378, 445, 523],
+                    backgroundColor: 'rgba(20, 184, 166, 0.8)'
+                }, {
+                    label: 'New Service Providers',
+                    data: [45, 67, 78, 89, 102, 124],
+                    backgroundColor: 'rgba(59, 130, 246, 0.8)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Provider performance chart
+        const providerCtx = document.getElementById('providerPerformanceChart').getContext('2d');
+        new Chart(providerCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Excellent (4.8-5.0)', 'Good (4.0-4.7)', 'Average (3.0-3.9)', 'Below Average (<3.0)'],
+                datasets: [{
+                    data: [65, 28, 6, 1],
+                    backgroundColor: ['#10b981', '#3b82f6', '#f59e0b', '#ef4444']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Service status chart
+        const serviceStatusCtx = document.getElementById('serviceStatusChart').getContext('2d');
+        new Chart(serviceStatusCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Completed', 'In Progress', 'Pending', 'Cancelled'],
+                datasets: [{
+                    data: [1042, 156, 247, 12],
+                    backgroundColor: ['#10b981', '#f59e0b', '#3b82f6', '#ef4444']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Quality trends chart
+        const qualityCtx = document.getElementById('qualityTrendsChart').getContext('2d');
+        new Chart(qualityCtx, {
+            type: 'line',
+            data: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                datasets: [{
+                    label: 'Quality Score',
+                    data: [89.2, 91.5, 92.1, 93.8],
+                    borderColor: 'rgb(34, 197, 94)',
+                    backgroundColor: 'rgba(34, 197, 94, 0.1)',
+                    tension: 0.4
+                }, {
+                    label: 'Customer Satisfaction',
+                    data: [4.6, 4.7, 4.8, 4.8],
+                    borderColor: 'rgb(59, 130, 246)',
+                    backgroundColor: 'rgba(59, 130, 246, 0.1)',
+                    tension: 0.4,
+                    yAxisID: 'y1'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true, max: 100 },
+                    y1: { type: 'linear', display: true, position: 'right', min: 4.0, max: 5.0 }
+                }
+            }
+        });
+
+        // Revenue chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Subscriptions', 'Emergency Services', 'Premium Add-ons', 'Corporate Contracts'],
+                datasets: [{
+                    data: [78, 12, 6, 4],
+                    backgroundColor: ['#10b981', '#f59e0b', '#8b5cf6', '#06b6d4']
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false
+            }
+        });
+
+        // Regional growth chart
+        const regionalCtx = document.getElementById('regionalGrowthChart').getContext('2d');
+        new Chart(regionalCtx, {
+            type: 'line',
+            data: {
+                labels: ['Q1 2023', 'Q2 2023', 'Q3 2023', 'Q4 2023'],
+                datasets: [{
+                    label: 'Saudi Arabia',
+                    data: [15.2, 18.9, 23.1, 28.3],
+                    borderColor: 'rgb(34, 197, 94)',
+                    tension: 0.4
+                }, {
+                    label: 'UAE',
+                    data: [6.8, 8.2, 10.1, 12.1],
+                    borderColor: 'rgb(59, 130, 246)',
+                    tension: 0.4
+                }, {
+                    label: 'Qatar',
+                    data: [2.1, 2.8, 3.5, 4.3],
+                    borderColor: 'rgb(139, 92, 246)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: { beginAtZero: true }
+                }
+            }
+        });
+
+        // Infrastructure chart
+        const infraCtx = document.getElementById('infrastructureChart').getContext('2d');
+        new Chart(infraCtx, {
+            type: 'radar',
+            data: {
+                labels: ['CPU Usage', 'Memory', 'Storage', 'Network', 'Database', 'Cache'],
+                datasets: [{
+                    label: 'Current Usage %',
+                    data: [45, 62, 38, 71, 55, 43],
+                    borderColor: 'rgb(20, 184, 166)',
+                    backgroundColor: 'rgba(20, 184, 166, 0.2)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
